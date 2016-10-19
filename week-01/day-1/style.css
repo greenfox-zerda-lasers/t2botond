@@ -1,0 +1,23 @@
+body {
+  background: white;
+
+}
+img{
+  width: 100%;
+}
+h1 { text-align: center ;
+   font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+}
+h2 { text-align: center ;
+   font-family: medium-content-sans-serif-font, "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+   font-weight: 100;
+   font-style: normal;
+   font-size: 27px;
+   margin-left: -1.69px;
+   line-height: 1.22;
+   letter-spacing: -.022em;
+   color: grey;
+}
+p { font-style: italic ;
+  margin-left: 250px;
+  margin-right:250px;}
