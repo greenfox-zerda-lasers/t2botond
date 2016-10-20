@@ -1,0 +1,23 @@
+body {
+}
+h1 {
+  text-indent: 50px;
+}
+.textBox {
+  margin: 50px;
+  width: 250px;
+  border: 2px solid black;
+  padding: 20px;
+  font-size: 18px;
+  background-image: url("duck.png");
+  background-repeat:no-repeat;
+  background-position: center;
+}
+.textBox:last-child { /* this last child stuff is pseudo selector.
+  doublecheck for tomorrow.*/
+  background-position: right bottom;
+}
+.left { /* this last child stuff is pseudo selector.
+  doublecheck for tomorrow.*/
+  background-position: left;
+}

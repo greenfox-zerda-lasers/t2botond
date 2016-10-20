@@ -1,0 +1,13 @@
+body {
+}
+h1 {
+  text-indent: 50px;
+}
+.textBox {
+  margin-left: 50px;
+  margin-bottom: 20px;
+  width: 400px;
+  border-left: 5px solid black;
+  padding: 5px;
+  font-size: 18px;
+}

@@ -1,0 +1,24 @@
+body {
+}
+h1 {
+  color : blue;
+  text-indent: 50px;
+}
+h2 {
+  color : orange;
+  text-indent: 50px;
+}
+p {
+  text-indent: 50px;
+}
+
+.mainList {
+  color: blue;
+  margin-left: 50px;
+}
+.subList {
+  color : black;
+}
+.subList2 li:first-child {
+  color: red;
+}

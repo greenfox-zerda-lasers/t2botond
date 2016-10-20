@@ -1,0 +1,18 @@
+body {
+}
+h1 {
+  text-indent: 50px;
+}
+.textBox {
+  margin-left: 50px;
+  width: 400px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 5px;
+  font-size: 18px;
+}
+.textBox:last-child { /* this last child stuff is pseudo selector.
+  doublecheck for tomorrow.*/
+  border-bottom: 0px ;
+}

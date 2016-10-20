@@ -1,0 +1,12 @@
+body {
+}
+
+.firstClass {
+        background-color : #FFD700;
+        padding: 20px;
+        font-size: 30px;
+        border: 5px #000000 solid;
+        margin: 25px;
+        width: 200px;
+        color: #FF69B4;
+}
