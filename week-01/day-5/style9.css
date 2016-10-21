@@ -1,0 +1,54 @@
+body {
+  margin: 0px 50px 50px 50px ;
+}
+.pic {
+  font-family:Abril;
+  background-image: url("anakin.png");
+  background-repeat: no-repeat;
+  height: 500px;
+  background-size: cover;
+  border-top: 10px solid black;
+
+}
+.pic h1 {
+    padding-top: 300px;
+    font-size: 40px;
+    margin-left: 500px;
+    font-family: 'Abril Fatface', cursive;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.pic h2 {
+    font-size: 70px;
+    margin-left: 500px;
+    font-family: 'Abril Fatface', cursive;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/*font-family: 'Abril Fatface', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Merriweather', serif;*/
+
+.textBox {
+  margin-top:15px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 0px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #2B1B17;
+  padding: 20px;
+  font-size: 25px;
+
+}
+.list1 {
+    margin-top:0px;
+
+}
+.textBox:last-child { /* this last child stuff is pseudo selector.
+  doublecheck for tomorrow.*/
+  background-position: right bottom;
+}
+.left { /* this last child stuff is pseudo selector.
+  doublecheck for tomorrow.*/
+  background-position: left;
+}
