@@ -1,0 +1,142 @@
+/*html { /*OK*/
+     /* Size of largest container or bigger */
+    /* min-width: 1280px;
+ }*/
+body {
+  margin: 0px 50px 50px 50px ;
+}
+.pic {/*OK*/
+  font-family:Abril;
+  background-image: url("IMG_4463.JPG");
+  background-repeat: no-repeat;
+  height: 500px;
+  background-size: cover;
+  border-top: 10px solid black;
+}
+.pic h1 { /*OK*/
+    padding-top: 300px;
+    font-size: 40px;
+    margin-left: 520px;
+    font-family: 'Abril Fatface', cursive;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.pic h2 { /*OK*/
+    font-size: 70px;
+    margin-left: 520px;
+    font-family: 'Abril Fatface', cursive;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h3 { /*OK*/
+  margin-top:15px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 0px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  padding: 20px;
+  font-size: 25px;
+  font-weight: 900;
+}
+h4 {
+  margin-top:-35px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 0px;
+  font-family: 'Merriweather';
+  color: black;
+  padding: 20px;
+  font-size: 15px;
+  font-style: italic;
+  font-weight:normal;
+}
+/*p {
+  margin-top:5px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 0px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  padding: 20px;
+  font-size: 17px;
+  font-weight:normal;
+} */
+.quotation {
+  font-size: 50px;
+  margin-left: 200px;
+/*  font-family: 'Merriweather', serif; */
+  font-family: 'Abril Fatface', cursive;
+/*  margin-top: 50px;
+  margin-bottom: 0px;*/
+  margin-right: 220px;
+  background-color: #424242;
+  color:white;
+  padding: 50px 50px 50px 50px;
+}
+.quotation span {
+  position:absolute;
+  margin-top:-90px;
+  margin-left:-50px;
+  font-size: 150px;
+}
+
+.sub::last-line {
+  font-family: 'Merriweather', serif;
+}
+/*p:first-letter {
+    color:black;
+    font-size: 80px;
+}*/
+
+.quote3 {
+  font-size: 40px;
+
+/*  font-family: 'Merriweather', serif; */
+  font-family: 'Abril Fatface', cursive;
+  background-color: grey;
+  color:white;
+  padding: 25px 25px 25px 25px;
+}
+.textBox {
+  margin-top:15px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #2B1B17;
+  padding: 20px;
+  font-size: 20px;
+}
+
+/*.list1 {
+    margin-top:-20px;
+}*/
+.quote2 {
+  color:black;
+  font-size: 150px;
+  position:absolute;
+/*  left : 50px;
+  right: 50px; */
+}
+.quote3 {
+  padding: 25px 25px 25px 25px;
+  margin: 0px 0px 0px 0px;
+}
+
+.borderTop {
+  border-color: black;
+  border-style: solid;
+  border-bottom: 5px;
+  border-left: 5px;
+  border-right: 5px;
+  background-image: url("image147.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:520px;
+}
+.borderTop ul {
+  float:right;
+  font-weight: bold;
+}

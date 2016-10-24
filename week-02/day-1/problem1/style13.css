@@ -1,0 +1,13 @@
+section {
+  width:250px;
+  text-align: justify;
+  border-bottom: 2px solid;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+#kacsa1 {
+  float:left;
+}
+#kacsa2 {
+  float:right;
+}

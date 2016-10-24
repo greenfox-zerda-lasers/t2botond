@@ -1,0 +1,51 @@
+section {
+  width:350px;
+  text-align: justify;
+  border-bottom: 2px solid;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+#kacsa1 {
+  float:left;
+}
+#kacsa2 {
+  float:right;
+}
+.message {
+  width:200px;
+  position: absolute;
+  top:100px;
+  left:100px;
+  border: 2px solid #000000;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
+article > p {
+  border-bottom:2px solid #000000;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+.message > p:first-of-type {
+  color: #FE0000;
+}
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 25px;
+}
+.controls p {
+    padding:5px;
+    background-color: grey;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+#X {
+  position:relative;
+  top: -185px;
+  right:-185px;
+  border: 2px solid #000000;
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 15px;
+  width:15px;
+}

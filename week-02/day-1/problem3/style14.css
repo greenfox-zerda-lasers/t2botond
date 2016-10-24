@@ -1,0 +1,40 @@
+.box {
+  width:auto;;
+  margin: 50px auto;
+}
+header{
+  height:80px;
+  background-color: #00FFFF;
+}
+.central-box {
+  height:500px;
+  display: flex;
+  justify-content: space-between;
+}
+#left-sidebar{
+  width:100px;
+  background-color: #FEA500;
+}
+main{
+  flex:1 0 200px;
+  position: relative;
+  background-color: #FE0000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#right-sidebar{
+  width:100px;
+  background-color: #81007F;
+}
+footer{
+  height: 80px;
+  background-color: #0000FE
+}
+#fixed{
+  position: absolute;
+  bottom:20px;
+  right:20px;
+  height:50px;
+  width:50px;
+  background-color: #000000;
+}
