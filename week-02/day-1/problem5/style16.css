@@ -1,0 +1,27 @@
+article {
+  position: absolute;
+  max-width: 350px;
+  width: auto;
+  background-color: grey;
+  padding: 15px;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+div {
+  background-color: #ff5722;
+  border: 2px solid #000000;
+  min-width: 80px;
+  min-height: 80px;
+  flex:0 0 5px;
+  margin: 15px;
+}
+#fifth {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+}

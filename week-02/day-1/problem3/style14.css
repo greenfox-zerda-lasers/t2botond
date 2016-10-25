@@ -1,5 +1,7 @@
 .box {
-  width:auto;;
+
+  width: auto;
+  height: 500px;
   margin: 50px auto;
 }
 header{

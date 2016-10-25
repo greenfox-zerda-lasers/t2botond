@@ -1,0 +1,84 @@
+form{
+  background-color: #dcd6cd;
+  max-width: 800px;
+  padding:100px;
+}
+h1{
+  color: #4A4261;
+}
+h2{
+  background-color: #938C9C;
+  color:white;
+  padding:5px;
+  border-radius: 5px;
+}
+main {
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+input[type=text],input[type=url],input[type=email]{
+  display:block;
+  width:100%;
+}
+#gender > label:first-child{
+  display:block
+}
+#cvupload > label{
+  display: block;
+}
+button[name=cancel]{
+  float:right;
+}
+#terms{
+  margin-top:25px;
+  margin-bottom: 25px;
+}
+#namegender{
+  display:flex;
+}
+#namegender > div{
+  flex:auto;
+  width:50%;
+  justify-content: space-between;
+}
+#personaldata{
+  min-width:250px;
+
+}
+#cvupload > label{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+label, p, select, button {
+  color: #4A4261;
+}
+#contact{
+  width:250px;
+}
+
+#brands{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+textarea{
+  height: 140px;
+  width: 100%;
+}
+button[name=cvupload]{
+  width:200px;
+  height:35px;
+ }
+ /*fonts
+ 
+button[name=save]{
+  height:50px;
+  width:200px;
+  background-color: #4A4261;
+  color: #FFFFFF;
+}
+button[name=cancel]{
+  height:50px;
+  width:170px;
+}

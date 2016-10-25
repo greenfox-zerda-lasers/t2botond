@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Elso form</title>
+    <link rel="stylesheet" type="text/css" href="style17.css">
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Josefin+Sans|Merriweather" rel="stylesheet">
+  </head>
+  <body>
+   <form action="/my/page" method="post">
+     <h1>Profil</h1>
+      <main>
+        <section id="personaldata">
+           <h2>Szemelyes adatok</h2>
+           <div>
+             <label for="name">Név:</label><br>
+             <input type="text" id="name" name="user_name">
+           </div>
+          <div id="namegender">
+             <div>
+               <label for="birth_date">Szuletesi eved:</label>
+               <input type="text" id="birth_date" name="user_birth_date">
+             </div>
+             <div id="gender">
+               <label for="gender">Nemed</label>
+               <input type="radio" name="gender" value="female">
+               <label for="gender">No:</label>
+               <input type="radio" name="gender" value="male">
+               <label for="gender">Ferfi:</label>
+            </div>
+          </div>
+          <p>Markak amiket kedvelsz</p>
+          <div id="brands">
+             <div id=#sub1>
+              <div><input type="checkbox" id="checkbox1" value="Adidas"><label for="Adidas">Adidas</label></div>
+              <div><input type="checkbox" id="checkbox2" value="Apple"><label for="Adidas">Apple</label></div>
+              <div><input type="checkbox" id="checkbox3" value="Coca-cola"><label for="Coca-cola">Coca-cola</label></div>
+              <div><input type="checkbox" id="checkbox4" value="Mazda"><label for="Mazda">Mazda</label></div>
+              <div><input type="checkbox" id="checkbox5" value="Nike"><label for="Nike">Nike</label></div>
+            </div>
+            <div id="sub2">
+              <div><input type="checkbox" id="checkbox6" value="Opel"><label for="Opel">Opel</label></div>
+              <div><input type="checkbox" id="checkbox7" value="Ray-Ban"><label for="Ray-Ban">Ray-Ban</label></div>
+              <div><input type="checkbox" id="checkbox8" value="Starbucks"><label for="Starbucks">Starbucks</label></div>
+              <div><input type="checkbox" id="checkbox9" value="Tesla"><label for="Tesla">Tesla</label></div>
+              <div><input type="checkbox" id="checkbox10" value="Yahoo"><label for="Yahoo">Yahoo</label></div>
+           </div>
+          </div>
+          <P>Tobbet is valaszthatsz!</p>
+        </section>
+        <section id="contact">
+          <h2>Kapcsolat</h2>
+           <div>
+             <label for="phone">Telefonszam:</label>
+             <input type="text" id="phone" name="user_tel">
+
+             <label for="email">E-mail cim:</label>
+             <input type="email" id="email" name="user_email">
+
+             <label for="facebook">Facebook:</label>
+             <input type="url" id="facebook" name="facebook-profile">
+
+             <label for="twitter">Twitter:</label>
+             <input type="url" id="twitter" name="twitter-profile">
+             <br>
+             <select>
+               <option value="" disable selected hidden="">Milyen hazban laksz?</options>
+               <option value="house">Csaladi</option>
+               <option value="apartment">Panel</option>
+             </select>
+           </div>
+        </section>
+      </main>
+        <label for="product">Bemutatkozas:</label></br>
+        <div>
+            <textarea id="introduction" name="user_introduction"></textarea>
+        </div>
+        <div id="cvupload">
+          <label for="uploadbutton">CV feltoltese</label>
+          <button name="cvupload">File kivalasztasa</button>
+        </div>
+        <div id="terms">
+          <input type="checkbox" id="checkbox11" value="feltetelek">
+          <label>Elfogadom a <a href="">felhasznalasi felteteleket</a>
+          </label>
+        </div>
+        <button name="save">Mentes</button>
+        <button name="cancel">Urlap torlese</button>
+   </form>
+  </body>
+</html>
