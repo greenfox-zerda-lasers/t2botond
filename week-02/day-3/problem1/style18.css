@@ -1,0 +1,45 @@
+
+button[name=white]{
+  color:#666666;
+  border:1px solid #D4D4D4;
+  box-shadow: 0px 0px 2px 2px #D2E0E8;
+  background: -webkit-linear-gradient(top,#FAFAFA 0%,#E2E2E2 100%);
+}
+button[name=white]:hover{
+  background: -webkit-linear-gradient(top,#EAEAEA 0%,#E2E2E2 100%);
+}
+button[name=white]:active{
+  background: -webkit-linear-gradient(top,#FAFAFA 0%,#D2D2D2 100%);
+}
+button[name=blue]{
+  color:#FFFFFF;
+  border: 1px #107996;
+  box-shadow: 0px 0px 2px 2px #107996;
+  background: -webkit-linear-gradient(top,#1Eb4E1 0%,#158EB1 100%);
+}
+button[name=blue]:hover{
+  background: -webkit-linear-gradient(top,#18c1c9 0%,#158EB1 100%);
+}
+button[name=blue]:active{
+  background: -webkit-linear-gradient(top,#1Eb4E1 0%,#157EA1 100%);
+}
+button[name=green]{
+  color:#FFFFFF;
+  border:1px solid #6C9B1B;
+  box-shadow: 0px 0px 2px 2px #5B8115;
+  background: -webkit-linear-gradient(top,#90CC27 0%,#6C9B1B 100%);
+}
+button[name=green]:hover{
+  background: -webkit-linear-gradient(#80BC17 0%,#6C9B1B 100%);
+}
+button[name=green]:active{
+  background: -webkit-linear-gradient(#90CC27 0%,#6C9B1B 100%);
+}
+button {
+  height: 50px;
+  width: 150px;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: 'Hind', sans-serif;
+}

@@ -1,0 +1,17 @@
+body{
+  margin:0px;
+}
+aside{
+  width:160px;
+  background-color: grey;
+  height:900px;
+  float: left;
+}
+header{
+  height:80px;
+  background-color: lime;
+  display: flex;
+}
+article{
+  display:flex;
+}

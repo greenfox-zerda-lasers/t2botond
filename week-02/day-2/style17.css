@@ -69,16 +69,31 @@ textarea{
 button[name=cvupload]{
   width:200px;
   height:35px;
+  background: #0079FF;
+  border-radius: 5px;
+  border: 2px solid #938C9C;
+  box-shadow: 0px 1px 1px 1px grey;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#E6E6E6));
+  background: -webkit-linear-gradient(0% 0%, 0% 100%,from(#FFFFFF), to(#E6E6E6));
+  background: -moz-linear-gradient(center top, #FFFFFF, #E6E6E6);
  }
- /*fonts
- 
+
 button[name=save]{
   height:50px;
   width:200px;
   background-color: #4A4261;
-  color: #FFFFFF;
+  border: 2px solid #494060;
+  color: #FFFFFF;  border-radius: 5px;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4A4261), to(#494060));
+  background: -webkit-linear-gradient(0% 0%, 0% 100%,from(#4A4261), to(#494060));
+  background: -moz-linear-gradient(center top, #4A4261, #494060);
 }
 button[name=cancel]{
   height:50px;
   width:170px;
+  border-radius: 5px;
+  border: 2px solid #938C9C;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#E6E6E6));
+  background: -moz-linear-gradient(center top, #FFFFFF, #E6E6E6);
+  background: -webkit-linear-gradient(0% 0%, 0% 100%,from(#FFFFFF), to(#E6E6E6));
 }
