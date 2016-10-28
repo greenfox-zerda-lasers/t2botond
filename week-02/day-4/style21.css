@@ -1,0 +1,40 @@
+body {
+  background-color: #333333;
+  display: flex;
+  width:auto;
+  height:600px;
+  justify-content: center;
+  align-items: center;
+}
+.white{
+  transform: rotate(45deg);
+  position:absolute;
+  color:#666666;
+  background: #FFFFFF;
+  height: 100px;
+  width: 100px;
+  border: 0px;
+  border-radius: 5px;
+  z-index: -1;
+}
+p{
+  color:tomato;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.redcorner{
+  position: absolute;
+  background-color:transparent;
+  border: 3px tomato solid;
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+  transition-duration: 1s;
+}
+.redcorner:hover{
+  transition-duration: 1s;
+  transform:rotate(-45deg);
+  transition-timing-function: cubic-bezier(.9, 0, .9, 1);
+
+}
