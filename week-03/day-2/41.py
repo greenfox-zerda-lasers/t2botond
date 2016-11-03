@@ -10,4 +10,11 @@ students = [
 # create a function that counts the students that
 # has more than 4 candies
 
+def candylist(i):
+    pupil=0
+    for j in range(len(i)):
+        if students[j]['candies'] > 4 :
+            pupil+=1
+    return pupil
 
+print(candylist(students))
