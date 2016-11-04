@@ -10,7 +10,7 @@ students = [
 def candylist(i):
     cukor=0
     for j in range(len(i)):
-        if students[j]['age'] < 10 :
+        if students[j]['age'] <= 10 :
             cukor=cukor+students[j]['candies']
     return cukor
 
