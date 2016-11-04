@@ -13,7 +13,7 @@ class Person():
 
     def greet(self):
         print(self.firstname,self.lastname)
-        
+
 class Student(Person):
     grades=[]
 
@@ -38,5 +38,5 @@ eva.add_grade(4)
 eva.add_grade(3)
 eva.add_grade(2)
 eva.add_grade(1)
-eva.greet
+eva.greet()
 print(eva.get_average())
