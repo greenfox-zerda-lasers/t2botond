@@ -17,10 +17,10 @@ def generate_color():
 
 canvas = Canvas(root, width = p, height = p,bg ='black')
 canvas.pack()
-for i in range(150):
+for i in range(250):
     x = random.randrange(5,p+3,1)
     y = random.randrange(5,p+3,1)
-    canvas.create_rectangle(x-1,y-1,x+1,y+1, fill = generate_color())
-    time.sleep(0.1)
+    canvas.create_rectangle(x-2,y-2,x+1,y+1, fill = generate_color())
+    time.sleep(0.05)
     canvas.update()
 root.mainloop()
