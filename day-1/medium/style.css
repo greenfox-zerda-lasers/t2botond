@@ -1,0 +1,35 @@
+figure {
+  margin-left: 250px;
+  margin-right: 250px;
+
+      }
+
+figcaption{
+
+  color: grey;
+
+    }
+
+h1 {
+  text-align: center;
+    }
+
+h2 {
+
+  font-style: normal;
+  color: grey;
+  text-align: center;
+  margin-left: 250px;
+  margin-right: 250px;
+  font-weight: lighter;
+
+  }
+
+p {
+  font-size: 20px;
+  font-style: oblique;
+  margin-left: 250px;
+  margin-right: 250px;
+
+
+}

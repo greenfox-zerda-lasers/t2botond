@@ -1,0 +1,45 @@
+html {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+body {
+    font-family: sans-serif;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
+
+.textfield {
+    padding: 20px;
+    margin-top: -4px;
+    border-top: 5px solid #556392;
+    width: 160px;
+}
+
+#John_Doe {
+    background-color: #FFFFF1;
+}
+
+#Jane_Doe {
+    background-color: #ACB8DF;
+}
+
+h1 {
+    margin: 0px;
+}
+
+td {
+    padding-right: 15px;
+}
+
+td:first-of-type {
+    font-weight: bold;
+}
+
+#editicon {
+    position: absolute;
+    left: 150px;
+}

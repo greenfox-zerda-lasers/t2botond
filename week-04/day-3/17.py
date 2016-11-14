@@ -1,20 +1,9 @@
-# create a 300x300 canvas.
-# make it look like a nigth sky:
-# - The background should be black
-# - The stars can be small squares
-# - The stars should have random positions on the canvas
-# - The stars should have random color (some shade of grey)
 from tkinter import *
 import random
 import time
 import math
 root = Tk()
 p = 600
-
-#def generate_color():
-#    w=random.randrange(0, 9)
-#    color = '#'+str(w)*3
-#    return color
 
 canvas = Canvas(root, width = p, height = p)
 canvas.pack()
@@ -52,6 +41,4 @@ while collusion < 5:
         x=x*(-1)
         n+=1
         collosion=n
-#    time.sleep(0.05)
-#    canvas.update()
 root.mainloop()
