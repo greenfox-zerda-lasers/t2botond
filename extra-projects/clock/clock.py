@@ -34,17 +34,24 @@ def funct_x2(t):
 
 def funct_y2(t):
     return cent_y(math.cos(t)*150)
+
+def funct_x3(t):
+    return cent_x(math.sin(t)*150)
+
+def funct_y3(t):
+    return cent_y(math.cos(t)*150)
 #drawing function
+
 def draw ():
 
         canvas.create_line(funct_x1(t/12), funct_y1(t/12), cent_x(0),cent_y(0), fill = "white")
         canvas.create_line(funct_x2(t), funct_y2(t),  cent_x(0),cent_y(0), fill = "white")
+        canvas.create_line(funct_x2(t*60), funct_y2(t*60),  cent_x(0),cent_y(0), fill = "red")
 
 while t < 1000:
-    t -= 0.03
+    t -= 0.01
     canvas.delete('all')
     time.sleep(0.1)
     draw()
-    print(t)
     canvas.update()
 root.mainloop()

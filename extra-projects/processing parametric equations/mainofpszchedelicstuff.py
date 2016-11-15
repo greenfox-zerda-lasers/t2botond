@@ -27,7 +27,7 @@ def funct_x1(t):
     return cent_x(math.sin(t)+((math.sin(t/10)*100) + 155))
 
 def funct_y1(t):
-    return cent_y(math.cos(t)+(math.cos(t/10)*120) -170)
+    return cent_y(math.cos(t)+(math.sin(t/23)*120) -170)
 
 def funct_x2(t):
     return cent_x(math.sin(t)+(math.sin(t)+((math.sin(-t/10)*133) + math.sin(t / 15/9) * 29 - 200)))
