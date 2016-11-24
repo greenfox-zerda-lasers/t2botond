@@ -17,6 +17,9 @@ class Draw:
         self.skeleton = self.resize("skeleton.png", 50, 50)
         self.hero_id = None
         self.boss_id = None
+        self.display_id = None
+        self.enemydisplay_id = None
+        self.diplay_killed = None
         self.skeleton_idlist = [[]]
 
     def resize(self, img_path, width, height):
@@ -31,6 +34,32 @@ class Draw:
                     self.canvas.create_image(i*50,j*50, anchor=NW, image=self.floor)
                 else:
                     self.canvas.create_image(i*50,j*50, anchor=NW, image=self.wall)
+
+    def draw_display(self, sp, dp, hp, key):
+        keyvalue = "None"
+        if key == True:
+            keyvalue = "Collected!"
+        self.canvas.delete(self.display_id)
+        self.display_id = self.canvas.create_text(180, 560, fill='black', font="Times 12 bold", text = "Health:{} SP:{} DP:{} Key:{}".format( hp, sp, dp, keyvalue))
+
+    def drawenemy_display(self, sp, dp, hp, key):
+        keyvalue = "None"
+        if key == True:
+            keyvalue = "Keyholder"
+        self.canvas.delete(self.enemydisplay_id)
+        self.enemydisplay_id = self.canvas.create_text(180, 580, fill='red', font="Times 12 bold", text = "Health:{} SP:{} DP:{} Key:{}".format( hp, sp, dp, keyvalue))
+
+    def display_killed(self):
+        self.canvas.delete(self.enemydisplay_id)
+        self.enemydisplay_id = self.canvas.create_text(180, 580, fill='black', font="Times 12 bold", text = "Your enemy is dead!")
+
+    def display_blank(self):
+        self.canvas.delete(self.enemydisplay_id)
+
+    def display_gameover(self):
+        self.canvas.delete(self.hero_id)
+        self.canvas.create_text(250, 300, fill='red', font="Times 48 bold", text = "GAME OVER!")
+        self.canvas.create_text(250, 380, fill='red', font="Times 20 bold", text = "Press r to restart or Esc to quit")
 
     def draw_hero_front(self, x, y):
         self.canvas.delete(self.hero_id)
@@ -48,25 +77,28 @@ class Draw:
         self.canvas.delete(self.hero_id)
         self.hero_id =self.canvas.create_image(x*50,y*50, anchor=NW, image=self.heroright)
 
-    def draw_boss(self, x, y):
+    def draw_boss(self, x, y, hp):
         self.canvas.delete(self.boss_id)
-        self.boss_id = self.canvas.create_image(x*50,y*50, anchor=NW, image=self.boss)
+        if hp > 0:
+            self.boss_id = self.canvas.create_image(x*50,y*50, anchor=NW, image=self.boss)
 
     def draw_skeletongroup(self, sklist):
 
         for i in range(len(sklist)):
-            
-            x = sklist[i][0]
-            y = sklist[i][1]
-            print(self.skeleton_idlist)
-            self.skeleton_idlist.append(self.canvas.create_image(x*50,y*50, anchor=NW, image=self.skeleton))
 
-            if len(sklist) < len(self.skeleton_idlist):
-                self.canvas.delete(self.skeleton_idlist[0])
-                self.skeleton_idlist = self.skeleton_idlist[1:]
+                x = sklist[i][0]
+                y = sklist[i][1]
+                if sklist[i][2] <= 0:
+                    self.skeleton_idlist.append('')
+                else:
+                    self.skeleton_idlist.append(self.canvas.create_image(x*50,y*50, anchor=NW, image=self.skeleton))
+
+                if len(sklist) < len(self.skeleton_idlist):
+                    self.canvas.delete(self.skeleton_idlist[0])
+                    self.skeleton_idlist = self.skeleton_idlist[1:]
 
     def launch_screen(self):
         self.root.mainloop()
 
-    def thing(event):
-            print(event)
+#    def thing(event):
+#            print(event)
