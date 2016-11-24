@@ -100,7 +100,8 @@ class Game_play:
         pass
 
     def checkfight(self, eventsss):
-
+        if self.herodata.hp > 30:
+            self.herodata.hp = 30
         if self.herodata.posx == self.bossdata.posx and self.herodata.posy == self.bossdata.posy:
             svhero = self.herodata.sp + 2 * random.randint(1, 6)
             svboss = self.bossdata.sp + 2 * random.randint(1, 6)
@@ -128,7 +129,7 @@ class Game_play:
                 self.herodata.dp += random.randint(1, 6)
                 self.herodata.hp += random.randint(1, 6)
                 if self.herodata.hp > 30:
-                    self.herodata = 30
+                    self.herodata.hp = 30
                 self.herodata.sp += random.randint(1, 6)
                 self.screenview.root.bind('<space>', self.blank)
 
@@ -139,7 +140,8 @@ class Game_play:
 
 
         for i in self.skeletondata.skeletonlist:
-
+            if self.herodata.hp > 30:
+                self.herodata.hp = 30
             if i[0] == self.herodata.posx and i[1] == self.herodata.posy:
                 svhero = self.herodata.sp + 2 * random.randint(1, 6)
                 svskeleton = i[4] + 2 * random.randint(1, 6)
@@ -164,7 +166,7 @@ class Game_play:
                     self.herodata.dp += random.randint(1, 6)
                     self.herodata.hp += random.randint(1, 6)
                     if self.herodata.hp > 30:
-                        self.herodata = 30
+                        self.herodata.hp = 30
                     self.herodata.sp += random.randint(1, 6)
                     self.screenview.root.bind('<space>', self.blank)
 
@@ -176,6 +178,7 @@ class Game_play:
 
                 if i[2] > 0:
                     self.screenview.drawenemy_display(i[4], i[3], i[2], i[5])
-
+        if self.herodata.hp > 30:
+            self.herodata.hp = 30
 test = Game_play()
 #test.screenview.canvas.mainloop()
