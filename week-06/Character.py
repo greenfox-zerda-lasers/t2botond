@@ -18,25 +18,61 @@ class Character:
         else :
                 return False
 
+    def move(self):
+        previous = 0
+        a = random.randrange(4)
+        step = False
+        while step == False:
+            if a == previous:
+                a = random.randrange(4)
+                a = previous
+            if a == 0:
+                if self.isvalidstep(self.posx+1, self.posy) == True:
+                    self.posx += 1
+                    step = True
+                else: a +=1
+            elif a == 1:
+                if self.isvalidstep(self.posx-1, self.posy) == True:
+                    self.posx -= 1
+                    step = True
+                else: a +=1
+            elif a == 2:
+                if self.isvalidstep(self.posx, self.posy+1) == True:
+                    self.posy += 1
+                    step = True
+                else: a +=1
+            elif a == 3:
+                if self.isvalidstep(self.posx, self.posy-1) == True:
+                    self.posy -= 1
+                    step = True
+                else: a = 0
+
 class Skeletongroup(Character):
     def __init__(self):
         super().__init__()
-        self.groupsize = random.randrange(3, 6, 1)
+        self.groupsize = random.randrange(3, 7, 1)
         self.skeletonlist = []
         for j in range(self.groupsize):
             self.skeletonlist.append([])
-        for i in range(self.groupsize):
-            x = -1
-            y = -1
-            while self.isvalidstep(x, y) == False:
+        i = 0
+        while i < len(self.skeletonlist):
                 x = random.randrange(10)
                 y = random.randrange(10)
                 print(x, y)
                 if self.isvalidstep(x, y) == True:
                     self.skeletonlist[i].append(x)
                     self.skeletonlist[i].append(y)
-        #            print(x, y)
-            print(self.skeletonlist)
+                    i += 1
+    def individual_move(self):
+        j = 0
+        while j < len(self.skeletonlist):
+            print(self.skeletonlist[j])
+            self.posx = self.skeletonlist[j][0]
+            self.posy = self.skeletonlist[j][1]
+            self.move()
+            self.skeletonlist[j][0] = self.posx
+            self.skeletonlist[j][1] = self.posy
+            j += 1
 
 class Hero(Character):
 
@@ -66,32 +102,3 @@ class Boss(Character):
         super().__init__()
         self.posx = 6
         self.posy = 0
-
-    def boss_move(self):
-        previous = 0
-        a = random.randrange(4)
-        step = False
-        while step == False:
-            if a == previous:
-                a = random.randrange(4)
-                a = previous
-            if a == 0:
-                if self.isvalidstep(self.posx+1, self.posy) == True:
-                    self.posx += 1
-                    step = True
-                else: a +=1
-            elif a == 1:
-                if self.isvalidstep(self.posx-1, self.posy) == True:
-                    self.posx -= 1
-                    step = True
-                else: a +=1
-            elif a == 2:
-                if self.isvalidstep(self.posx, self.posy+1) == True:
-                    self.posy += 1
-                    step = True
-                else: a +=1
-            elif a == 3:
-                if self.isvalidstep(self.posx, self.posy-1) == True:
-                    self.posy -= 1
-                    step = True
-                else: a = 0

@@ -39,7 +39,9 @@ class Game_play:
 
     def moveenemy(self):
         if self.movecounter%2 == 0:
-            self.bossdata.boss_move()
+            self.skeletondata.individual_move()
+            self.screenview.draw_skeletongroup(self.skeletondata.skeletonlist)
+            self.bossdata.move()
             self.screenview.draw_boss(self.bossdata.posx, self.bossdata.posy)
         self.movecounter += 1
 

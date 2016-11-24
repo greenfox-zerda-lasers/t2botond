@@ -17,7 +17,7 @@ class Draw:
         self.skeleton = self.resize("skeleton.png", 50, 50)
         self.hero_id = None
         self.boss_id = None
-        self.skeleton_id = None
+        self.skeleton_idlist = [[]]
 
     def resize(self, img_path, width, height):
         image = Image.open(img_path)
@@ -53,11 +53,17 @@ class Draw:
         self.boss_id = self.canvas.create_image(x*50,y*50, anchor=NW, image=self.boss)
 
     def draw_skeletongroup(self, sklist):
+
         for i in range(len(sklist)):
-    #        self.canvas.delete(self.skeleton_id)
+            
             x = sklist[i][0]
             y = sklist[i][1]
-            self.skeleton_id = self.canvas.create_image(x*50,y*50, anchor=NW, image=self.skeleton)
+            print(self.skeleton_idlist)
+            self.skeleton_idlist.append(self.canvas.create_image(x*50,y*50, anchor=NW, image=self.skeleton))
+
+            if len(sklist) < len(self.skeleton_idlist):
+                self.canvas.delete(self.skeleton_idlist[0])
+                self.skeleton_idlist = self.skeleton_idlist[1:]
 
     def launch_screen(self):
         self.root.mainloop()
