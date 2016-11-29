@@ -15,15 +15,15 @@ r = 16
 x = 50
 y = canvasheight / 2
 collosion = 0
-vx = random.randint(5, 15 )
-vy = - random.randint(8, 9 )
+vx = random.randint(3, 3 )
+vy = - random.randint(9, 9 )
 timer = 1
 t = 1
 out = False
 color = generate_color()
 #   BALL
 def ball(x, y, color):
-    return canvas.create_oval(x-r, y-r, x+r, y+r,  outline = color)
+    return canvas.create_oval(x-r, y-r, x+r, y+r,  outline = "black")
 
 #   SCREEN
 canvas = Canvas(root, width = canvaswidth, height = canvasheight)

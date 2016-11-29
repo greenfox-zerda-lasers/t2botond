@@ -49,9 +49,9 @@ def draw ():
         canvas.create_line(funct_x2(t), funct_y2(t),  cent_x(0),cent_y(0), fill = "red")
 
 while t < 11000:
-    t -= 0.01
+    t -= 0.05
     canvas.delete('all')
-    time.sleep(1)
+    time.sleep(.01)
     draw()
     canvas.update()
 root.mainloop()

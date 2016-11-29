@@ -43,12 +43,16 @@ def draw ():
         return color
     for i in range(25):
         gen_hex_colour_code(color)
-        canvas.create_line(funct_x1(t+i), funct_y1(t+i), funct_x2(t+i), funct_y2(t+i), fill = color[i])
+    #    canvas.create_line(funct_x1(t+i), funct_y1(t+i), funct_x2(t+i), funct_y2(t+i), fill = color[i])
+
+    canvas.create_line(funct_x1(t+i+1), funct_y1(t+i+1), funct_x1(t+i), funct_y1(t+i), fill = "white")
+    canvas.create_line(funct_x2(t+i+1), funct_y2(t+i+1), funct_x2(t+i), funct_y2(t+i), fill = "white")
+
 
 while t < 1000:
-    t += 1
-    canvas.delete('all')
-    time.sleep(0.08)
+    t += 0.8
+    #canvas.delete('all')
+    time.sleep(0.02)
     draw()
     canvas.update()
 root.mainloop()

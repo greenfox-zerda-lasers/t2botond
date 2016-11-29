@@ -5,10 +5,10 @@ import Character
 class Draw:
     def __init__(self):
         self.root = Tk()
-        self.canvas = Canvas(self.root, width = 620, height = 620)
+        self.canvas = Canvas(self.root, width = 1300, height = 820)
         self.canvas.pack()
-        self.floor = self.resize("floor.png",50 ,50)
-        self.wall = self.resize("wall.png", 50, 50)
+        self.floor = self.resize("floor.png",40 ,40)
+        self.wall = self.resize("wall.png", 40, 40)
         self.herofront = self.resize("hero-down.png", 50, 50)
         self.heroback = self.resize("hero-up.png", 50, 50)
         self.heroleft = self.resize("hero-left.png", 50, 50)
@@ -29,12 +29,12 @@ class Draw:
         return ImageTk.PhotoImage(resized_image)
 
     def draw_background(self, mapdata):
-        for i in range(10):
-            for j in range(11):
+        for i in range(21):
+            for j in range(15):
                 if mapdata[j][i] == 0:
-                    self.canvas.create_image(i*50,j*50, anchor=NW, image=self.floor)
+                    self.canvas.create_image(i*40,j*40, anchor=NW, image=self.floor)
                 else:
-                    self.canvas.create_image(i*50,j*50, anchor=NW, image=self.wall)
+                    self.canvas.create_image(i*40,j*40, anchor=NW, image=self.wall)
 
     def draw_display(self, sp, dp, hp, key):
         keyvalue = "None"
