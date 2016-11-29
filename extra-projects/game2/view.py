@@ -18,20 +18,23 @@ class Draw:
         self.futuramaship.append(PhotoImage(file = "spaceship.png"))
         self.futuramaship.append(PhotoImage(file = "spaceship1.png"))
         self.futuramaship.append(PhotoImage(file = "spaceship2.png"))
-        self.exp.append(PhotoImage(file = "r11.png"))
-        self.exp.append(PhotoImage(file = "r12.png"))
-        self.exp.append(PhotoImage(file = "r13.png"))
-        self.exp.append(PhotoImage(file = "r14.png"))
-        self.exp.append(PhotoImage(file = "r15.png"))
-        self.exp.append(PhotoImage(file = "r16.png"))
-        self.exp.append(PhotoImage(file = "r17.png"))
-        self.exp.append(PhotoImage(file = "r18.png"))
-        self.exp.append(PhotoImage(file = "r21.png"))
-        self.exp.append(PhotoImage(file = "r22.png"))
-        self.exp.append(PhotoImage(file = "r23.png"))
-        self.exp.append(PhotoImage(file = "r24.png"))
-        self.exp.append(PhotoImage(file = "r25.png"))
-        self.exp.append(PhotoImage(file = "r26.png"))
+        self.exp.append(PhotoImage(file = "slice_3_3.png"))
+        self.exp.append(PhotoImage(file = "slice_3_2.png"))
+        self.exp.append(PhotoImage(file = "slice_3_1.png"))
+        self.exp.append(PhotoImage(file = "slice_3_0.png"))
+        self.exp.append(PhotoImage(file = "slice_2_3.png"))
+        self.exp.append(PhotoImage(file = "slice_2_2.png"))
+        self.exp.append(PhotoImage(file = "slice_2_1.png"))
+        self.exp.append(PhotoImage(file = "slice_2_0.png"))
+        self.exp.append(PhotoImage(file = "slice_1_3.png"))
+        self.exp.append(PhotoImage(file = "slice_1_2.png"))
+        self.exp.append(PhotoImage(file = "slice_1_1.png"))
+        self.exp.append(PhotoImage(file = "slice_1_0.png"))
+        self.exp.append(PhotoImage(file = "slice_0_3.png"))
+        self.exp.append(PhotoImage(file = "slice_0_2.png"))
+        self.exp.append(PhotoImage(file = "slice_0_1.png"))
+        self.exp.append(PhotoImage(file = "slice_0_0.png"))
+
         self.collosion = False
         self.height = self.centery
         self.spaceship_id = ''
@@ -45,12 +48,15 @@ class Draw:
             self.spaceship_id = self.canvas.create_image(100,self.height, anchor=N, image = random.choice(self.futuramaship))
 
     def explosion(self):
-        if self.expcounter < 13:
+        if self.expcounter / 20 < 15:
             self.canvas.delete(self.explosion_id)
-            self.explosion_id = self.canvas.create_image(100,self.height, anchor=N, image =self.exp[self.expcounter])
+            self.explosion_id = self.canvas.create_image(90,self.height, anchor=N, image =self.exp[int(self.expcounter/20)])
             self.expcounter += 1
-            time.sleep(0.1)
-    #    self.canvas.delete(self.explosion_id)
+            if expcounter / 20 > 10:
+                self.canvas.delete(self.spaceship_id)
+        else :
+            self.canvas.delete(self.explosion_id)
+            self.canvas.delete(self.spaceship_id)
 
     def planetoid_view(self, outline, color, startvalues):
 
@@ -59,7 +65,7 @@ class Draw:
         self.startvalues = startvalues
         self.outline_show = []
         self.outline_subshow = []
-        r = 0
+        self.r = 0
         self.onscreen = True
         self.x = self.centerx * 2 +200
         self.y = self.centery + self.startvalues[3]
@@ -76,34 +82,18 @@ class Draw:
             for i in self.outline:
                 c = math.sqrt(i[0] ** 2 + i[1] ** 2)
                 alfa = math.asin(i[1] / c)
-                newy = c * math.sin(alfa + r/180)
-                newx = c * math.cos(alfa + r/180)
+                newy = c * math.sin(alfa + self.r/180)
+                newx = c * math.cos(alfa + self.r/180)
 
                 if i[0] > 0:
                     newx = - newx
                     newy = - newy
-
-                if newy + self.y > self.maxy:
-                    self.maxy = newy + self.y
-                if newy + self.y < self.miny:
-                    self.miny = newy + self.y
-                if self.minx < self.x - newx and newx + self.x > 0 :
-                    self.minx = newx+self.x
 
                 self.outline_subshow.append(newx)
                 self.outline_subshow.append(newy)
                 self.outline_show.append(self.outline_subshow)
                 self.outline_subshow = []
 
-
-            if self.height > self.miny and self.height < self.maxy and self.minx < 150:  #collosiondetection
-                print("Collosion")
-                self.explosion()
-                self.collosion = True
-            #    if self.minx < 200:
-            #        print("minx")
-
-            else: print("all right!")
             self.canvas.delete(self.planetoid_id)
             self.spaceship(self.height)
             self.planetoid_id = self.canvas.create_polygon(self.outline_show[0][0] + self.x, self.outline_show[0][1] + self.y,
@@ -118,14 +108,20 @@ class Draw:
                                                             self.outline_show[9][0] + self.x, self.outline_show[9][1] + self.y,
                                                             self.outline_show[10][0] + self.x, self.outline_show[10][1] + self.y,
                                                             self.outline_show[11][0] + self.x, self.outline_show[11][1] + self.y, fill = self.color)
-            if self.x < -200 or self.x > 1800 or self.y < -200 or self.y > 1000:
+            if self.x < -400 or self.x > 1800 or self.y < -200 or self.y > 1000:
                 self.onscreen = False
-                print("out of screen")
-            self.outline_show = []
-            time.sleep(0.005)
 
+            self.outline_show = []
+            self.crash = []
+            self.crash.append(self.canvas.find_overlapping(50, self.height,150, self.height+39))
+            try :
+                if self.crash[0][1] > 0:
+                    self.collosion = True
+                    self.explosion()
+            except:
+                pass
             self.canvas.update()
-            r += 0.02 * self.startvalues[2]
+            self.r += 0.02 * self.startvalues[2]
 
     def launch_screen(self):
         self.root.mainloop()
