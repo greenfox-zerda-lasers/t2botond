@@ -152,6 +152,19 @@ class Draw:
         self.bestboard_id4 = self.canvas.create_text(500, 360,font='Helvetica 16 bold', text = '#4:{}'' ''{}'.format(self.bestboard[3][0],self.bestboard[3][1]), fill = "white")
         self.bestboard_id5 = self.canvas.create_text(500, 390,font='Helvetica 16 bold', text = '#5:{}'' ''{}'.format(self.bestboard[4][0],self.bestboard[4][1]), fill = "white")
 
+    def write(self):
+        #    self.master = Tk()
+            self.text = StringVar()
+            Label(self.root, text="You achieved top five score! Type your name and press <Enter>:").pack()
+            self.e1 = Entry(self.root, textvariable = self.text)
+            self.e1.pack()
+            self.e1.bind('<Return>',self.submit)
+        #    self.master.mainloop()
+
+
+    def submit(self, event):
+            self.recordername = self.e1.get()
+            print(self.recordername)
 
     def launch_screen(self):
         self.root.mainloop()

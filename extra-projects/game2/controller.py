@@ -17,8 +17,8 @@ class Game_play:
             self.object_model.planetoid_model(self.screen.distancecounter)
             self.screen.planetoid_view(self.object_model.planetoid_model(self.screen.distancecounter), self.object_model.planetoid_color(),self.object_model.startvalues() )
         if self.screen.distancecounter > self.recordchecker.min_to_board():
-            self.recordchecker.write()
-            self.recordchecker.compare(self.screen.distancecounter)
+            self.screen.write()
+            self.recordchecker.compare(self.screen.distancecounter, self.screen.recordername)
         self.screen.show_winners(self.recordchecker.best_current())
         self.gameover()
         self.screen.launch_screen()

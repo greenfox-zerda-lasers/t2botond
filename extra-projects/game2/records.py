@@ -4,7 +4,8 @@ import sys
 class Recordhandle:
 
 
-    def compare(self, distance):
+    def compare(self, distance, recname):
+        self.recordername = recname
         self.distance = distance
         self.changer = []
         self.newrecord = False
