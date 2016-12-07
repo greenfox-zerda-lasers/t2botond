@@ -153,18 +153,27 @@ class Draw:
         self.bestboard_id5 = self.canvas.create_text(500, 390,font='Helvetica 16 bold', text = '#5:{}'' ''{}'.format(self.bestboard[4][0],self.bestboard[4][1]), fill = "white")
 
     def write(self):
-        #    self.master = Tk()
+            self.canvas.delete('all')
+            self.gameover_id1 = self.canvas.create_text(500, 130,font='Helvetica 72 bold', text = 'GAME OVER', fill = "red")
+            self.gameover_id2 = self.canvas.create_text(500, 300,font='Helvetica 24 bold', text = 'You achieved top five score!', fill = "white")
+            self.gameover_id3 = self.canvas.create_text(500, 350,font='Helvetica 24 bold', text = 'Type your name to the textbox below!', fill = "white")
             self.text = StringVar()
-            Label(self.root, text="You achieved top five score! Type your name and press <Enter>:").pack()
             self.e1 = Entry(self.root, textvariable = self.text)
             self.e1.pack()
+            self.e1.focus()
             self.e1.bind('<Return>',self.submit)
-        #    self.master.mainloop()
-
+            self.canvas.update()
+            self.root.mainloop()
 
     def submit(self, event):
+            self.canvas.delete(self.gameover_id1)
+            self.canvas.delete(self.gameover_id2)
+            self.canvas.delete(self.gameover_id3)
             self.recordername = self.e1.get()
             print(self.recordername)
+            self.gameover_display()
+            self.e1.destroy()
+            self.root.mainloop()
 
     def launch_screen(self):
         self.root.mainloop()

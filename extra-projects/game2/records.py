@@ -52,20 +52,20 @@ class Recordhandle:
             f.close()
             return self.minboard
 
-    def write(self):
-            self.master = Tk()
-            self.text = StringVar()
-            Label(self.master, text="You achieved top five score! Type your name and press <Enter>:").pack()
-            self.e1 = Entry(self.master, textvariable = self.text)
-            self.e1.pack()
-            self.e1.bind('<Return>',self.submit)
-            self.master.mainloop()
+#    def write(self):
+#            self.master = Tk()
+#            self.text = StringVar()
+#            Label(self.master, text="You achieved new record! Type your name and press <Enter>:").pack()
+#            self.e1 = Entry(self.master, textvariable = self.text)
+#            self.e1.pack()
+#            self.e1.bind('<Return>',self.submit)
+#            self.master.mainloop()
 
 
-    def submit(self, event):
-            self.recordername = self.e1.get()
-            print(self.recordername)
+#    def submit(self, event):
+#            self.recordername = self.e1.get()
+#            print(self.recordername)
         #    try:
-            self.master.destroy()
+#            self.master.destroy()
         #    except:
             #    self.compare(self.distance)
