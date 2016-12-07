@@ -173,7 +173,6 @@ class Draw:
             print(self.recordername)
             self.gameover_display()
             self.e1.destroy()
-            self.root.mainloop()
 
     def launch_screen(self):
         self.root.mainloop()
