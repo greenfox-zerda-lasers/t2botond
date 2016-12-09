@@ -5,13 +5,16 @@
   <title>Workshop: Bookmarklets</title>
 </head>
 <body>
-  <a href="javascript:alert('nothing here yet!');">
-    Bookmarklet 2
+  <a href="javascript:  var pictures = document.querySelectorAll('img');
+    pictures.forEach(function(a){a.setAttribute('src', 'http://bit.ly/lpgreenfox')});">
+    Vfdbbggrs
   </a>
   <h1>Antoine de Saint-Exupery's 110th Birthday</h1>
   <img src="http://placekitten.com/200/300">
   <img src="http://placekitten.com/200/100">
   <script>
+    var pictures = document.querySelectorAll('img')
+    pictures.forEach(function(a){a.setAttribute('href', 'http://bit.ly/lpgreenfox')})
     // Create a script that replaces every image
     // with this: http://bit.ly/lpgreenfox
     // Create a bookmarklet that does that on any website.

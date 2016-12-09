@@ -147,11 +147,11 @@ class Draw:
     def show_winners(self, bestboard):
         print('bcdwhkv')
         self.bestboard = bestboard
-#        self.bestboard_id1 = self.canvas.create_text(500, 270,font='Helvetica 16 bold', text = '#1:{}'' ''{}'.format(self.bestboard[0][0],self.bestboard[0][1]), fill = "white")
-#        self.bestboard_id2 = self.canvas.create_text(500, 300,font='Helvetica 16 bold', text = '#2:{}'' ''{}'.format(self.bestboard[1][0],self.bestboard[1][1]), fill = "white")
-#        self.bestboard_id3 = self.canvas.create_text(500, 330,font='Helvetica 16 bold', text = '#3:{}'' ''{}'.format(self.bestboard[2][0],self.bestboard[2][1]), fill = "white")
-#        self.bestboard_id4 = self.canvas.create_text(500, 360,font='Helvetica 16 bold', text = '#4:{}'' ''{}'.format(self.bestboard[3][0],self.bestboard[3][1]), fill = "white")
-#        self.bestboard_id5 = self.canvas.create_text(500, 390,font='Helvetica 16 bold', text = '#5:{}'' ''{}'.format(self.bestboard[4][0],self.bestboard[4][1]), fill = "white")
+        self.bestboard_id1 = self.canvas.create_text(500, 270,font='Helvetica 16 bold', text = '#1:{}'' ''{}'.format(self.bestboard[0][0],self.bestboard[0][1]), fill = "white")
+        self.bestboard_id2 = self.canvas.create_text(500, 300,font='Helvetica 16 bold', text = '#2:{}'' ''{}'.format(self.bestboard[1][0],self.bestboard[1][1]), fill = "white")
+        self.bestboard_id3 = self.canvas.create_text(500, 330,font='Helvetica 16 bold', text = '#3:{}'' ''{}'.format(self.bestboard[2][0],self.bestboard[2][1]), fill = "white")
+        self.bestboard_id4 = self.canvas.create_text(500, 360,font='Helvetica 16 bold', text = '#4:{}'' ''{}'.format(self.bestboard[3][0],self.bestboard[3][1]), fill = "white")
+        self.bestboard_id5 = self.canvas.create_text(500, 390,font='Helvetica 16 bold', text = '#5:{}'' ''{}'.format(self.bestboard[4][0],self.bestboard[4][1]), fill = "white")
         print('brevfrewcdwhkv')
 
     def write(self):

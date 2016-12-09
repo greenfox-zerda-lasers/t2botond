@@ -5,8 +5,11 @@
   <title>Workshop: Bookmarklets</title>
 </head>
 <body>
-  <a href="javascript:alert('nothing here yet!');">
-    Bookmarklet 1
+  <a href="javascript:
+    var list = document.querySelectorAll('h1');
+      list.forEach(function(a) {
+      a.textContent = 'Green Fox Academy Conquers the World';
+    });">
   </a>
   <h1>Antoine de Saint-Exupery's 110th Birthday</h1>
   <p>
@@ -18,6 +21,11 @@
   </p>
 
   <script>
+    var list = document.querySelectorAll('h1');
+    list.forEach(function(a) {
+    a.textContent = 'Green Fox Academy Conquers the World';
+  });
+
     // Create a script that replaces every h1 headline's content
     // with 'Green Fox Academy Conquers the World'.
     // Create a bookmarklet that does that on any website.
