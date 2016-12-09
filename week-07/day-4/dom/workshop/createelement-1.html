@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: CreateElement</title>
+</head>
+<body>
+  <ul class="asteroids">
+    <li id="b325" class="asteroid">The King</li>
+    <li class="asteroid b326">The Conceited Man</li>
+  </ul>
+  <div class="container"></div>
+
+  <script>
+    var asteroidList = document.querySelector('ul.asteroids')
+    // Add an item that says 'The Green Fox' to the asteroid list.
+    var newAsteroid = document.createElement('li')
+    newAsteroid.id = 'b111'
+    newAsteroid.textContent = 'The GreenFox'
+    asteroidList.appendChild(newAsteroid)
+    // Add an item that says 'The Lamplighter' to the asteroid list.
+    var newAsteroid2 = document.createElement('li')
+    newAsteroid.id = 'b112'
+    newAsteroid2.textContent = 'The Lamplighter'
+    asteroidList.appendChild(newAsteroid2)
+    // Add a heading saying 'I can add elements to the DOM!' to the .container.
+    var div1 = document.querySelector('.container')
+    var heading1 = document.createElement('h1')
+    heading1.textContent = 'I can add elements to the DOM!'
+    div1.appendChild(heading1)
+    // Add an image, any image, to the container.
+    var picture = document.createElement('img')
+    picture.setAttribute('src','D:/greenfox/Greenfox/t2botond/week-07/day-4/dom/workshop/WIN_20161208_151844.JPG')
+    div1.appendChild(picture)
+
+  </script>
+  <script src="createelement-1.js"></script>
+</body>
+</html>

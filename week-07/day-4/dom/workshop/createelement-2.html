@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: CreateElement</title>
+</head>
+<body>
+  <ul class="asteroids">
+    <li>The King</li>
+  </ul>
+
+  <script>
+    // Remove the king from the list.
+    var list = document.querySelector('.asteroids')
+    var kingitem = document.querySelector('li')
+    list.removeChild(kingitem)
+    for(var i = 0; i < 3; i++){
+      var newitem = document.createElement('li')
+      newitem.textContent = "The Fox"
+    list.appendChild(newitem)
+    }
+    // Add 3 list items saying 'The Fox' to the list.
+  </script>
+  <script src="createelement-2.js"></script>
+</body>
+</html>

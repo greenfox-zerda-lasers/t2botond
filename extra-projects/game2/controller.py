@@ -19,6 +19,7 @@ class Game_play:
         if self.screen.distancecounter > self.recordchecker.min_to_board():
             self.screen.write()
             self.recordchecker.compare(self.screen.distancecounter, self.screen.recordername)
+            print('lefut')
         self.screen.show_winners(self.recordchecker.best_current())
         self.gameover()
         self.screen.launch_screen()
