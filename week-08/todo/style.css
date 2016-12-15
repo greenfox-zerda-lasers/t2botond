@@ -1,0 +1,71 @@
+html {
+  display : flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  margin: 50px;
+  background-color: #50e3c2
+}
+main {
+  max-width: 600px;
+  padding: 35px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f7f7f7
+}
+p {
+  margin: 0px;
+}
+button {
+  border: 0px;
+}
+.heading {
+    text-align: center;
+    font-weight: 200;
+    font-family: Lato, sans-serif;
+    font-size: 64px;
+    color: #9b9b9b
+}
+
+.todo-item {
+    font-family: Lato, sans-serif;
+    font-size: 26px;
+    line-height: 2.2;
+    color: #cecece;
+    list-style-type: none;
+}
+
+.button-text {
+  background: #df69e8;
+    font-family: Lato-Regular, sans-serif;
+    font-size: 26px;
+    color: #ffffff;
+}
+.textfield {
+    font-size: 26px;
+}
+.listrow {
+  min-height: 45px;
+  display:flex;
+  justify-content: space-between;
+}
+.icons {
+  align-items: center;
+  display:flex;
+  justify-content: flex-end;
+}
+.input {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 35px;
+}
+.icons img{
+  width:22px;
+  height: 22px;
+}
+.icons > img:hover {
+  border: 1px solid #000000;
+  margin: -1px;
+}

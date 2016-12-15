@@ -12,5 +12,8 @@
     "hell"
   ],
   "author": "Botond Syarka\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[3~z",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
 }
