@@ -1,3 +1,5 @@
+
+function getToDos(){
 var request = new XMLHttpRequest();
 
 request.open('GET', 'https://mysterious-dusk-8248.herokuapp.com/todos');
@@ -24,12 +26,14 @@ function ready(){
     listrow.className = "listrow"
     var img1 = document.createElement('img')
     var img2 = document.createElement('img')
+    img1.setAttribute('id',e.id)
+    console.log(e.id)
 
     linetext.innerHTML = e.text
 
     img1.setAttribute('src','bin.png')
     img1.addEventListener('click', function(e){
-      deletetask();
+      deletetask(e.id);
     })
 
     if(e.completed === false){
@@ -38,7 +42,7 @@ function ready(){
       img2.setAttribute('src','checked.jpg')
     }
     img2.addEventListener('click',function(){
-      changetaskstate();
+      changetaskstate(e.id);
     })
 
     // createelement img
@@ -51,10 +55,29 @@ function ready(){
   })
 }
 }
+}
 
 function changetaskstate(e){
-  console.log("Wanna change state")
+  console.log(e)
+  var request = new XMLHttpRequest();
+  request.open('REPLACE','https://mysterious-dusk-8248.herokuapp.com/todos');
+  request.send()
+
 }
 function deletetask(e){
   console.log("Wanna delete")
 }
+
+function postDatas(){
+  var inputtext = document.querySelector('input').value
+  // console.dir(value);
+  var request = new XMLHttpRequest();
+  request.open('POST', 'https://mysterious-dusk-8248.herokuapp.com/todos');
+  request.setRequestHeader("Content-Type","application/json")
+  request.send(JSON.stringify({text:inputtext}));
+  document.querySelector('input').value = ''
+}
+var addbutton = document.querySelector("button")
+addbutton.addEventListener('click',postDatas)
+
+getToDos()
