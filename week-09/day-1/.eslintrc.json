@@ -1,0 +1,15 @@
+
+{
+    "extends": "airbnb-base",
+    "plugins": [
+        "import"
+    ],
+    "modules": false,
+    "rules": {
+      "no-var": "off",
+      "no-console": "off",
+      "strict": "off",
+      "vars-on-top": "off",
+      "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }]
+    }
+}
