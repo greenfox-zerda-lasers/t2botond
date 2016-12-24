@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+    var code = "-- . .-. .-. -.--  -.-. .... .-. .. ... - -- .- ...";
+    var i = 0;
+    function step(){
+      switch (code[i]) {
+        case "-":
+        delay = 600;
+        break;
+        case ".":
+        delay = 200;
+        break;
+        case " ":
+        delay = 800;
+        break;
+      }
+      console.log(code[i]);
+      delay = 200;
+      if (i<code.length){
+        i++;
+      } else {
+        i = 0;
+      }
+      relay.turnOn(2)
+      setTimeout(step,delay);
+      relay.turnOff(2)
+    }
+    step();
+    </script>
+  </body>
+</html>
