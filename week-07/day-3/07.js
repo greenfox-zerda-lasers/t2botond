@@ -1,6 +1,6 @@
 'use strict';
 
-var numbers = [2, 5, 11, 32416190071];
+var numbers = [2, 5, 11, 31];
 //true
 //[Finished in 931.127s]
 // create a function that takes an array of numbers and returns a boolean

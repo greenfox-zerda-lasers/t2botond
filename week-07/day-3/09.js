@@ -9,8 +9,9 @@ function lettercounter(text){
 //  split, characters to stirng, object.keys, x in object
   var emptyobj = {}
   text.split('').forEach(function(char){
-    console.log(char);
+    // console.log(char);
     if (Object.keys(emptyobj).indexOf(char) >= 0) {
+
   //  if (char in emptyobj) {
       emptyobj[char] += 1
     }
@@ -19,7 +20,6 @@ function lettercounter(text){
     }
   })
   return emptyobj
-
 }
 var string = "bhrvurbbu NPOKq"
 console.log(lettercounter(string));
