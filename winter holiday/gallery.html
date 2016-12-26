@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="gallery.css">
+    <meta charset="utf-8">
+    <title>Fcuking gallery</title>
+  </head>
+  <body>
+    <main>
+      <div class="maincontainer">
+        <button class="left button">&lt</button>
+        <div class="displayedimage pic"></div>
+        <button class="right button">&gt</button>
+      </div>
+      <div class="smallimages">
+        <img class="icon one pic"></img>
+        <img class="icon two pic"></img>
+        <img class="icon three pic"></img>
+        <img class="icon four pic"></img>
+        <img class="icon five pic"></img>
+      </div>
+    </main>
+    <script>
+    'use strict'
+    var piclist = ['url(gallerypic/IMG_0068.JPG)',
+                    'url(gallerypic/IMG_0074.JPG)',
+                    'url(gallerypic/IMG_3877jav.JPG)',
+                    'url(gallerypic/IMG_4056jav.JPG)',
+                    'url(gallerypic/IMG_4081.JPG)',
+                    'url(gallerypic/IMG_4283_1.JPG)']
+
+    var listindex = 0;
+
+    var pictures = document.querySelectorAll(".pic")
+      pictures.forEach(function(item) {
+        item.style.backgroundImage = piclist[listindex];
+        listindex += 1;
+      })
+
+    var leftbutt = document.querySelector(".left");
+    leftbutt.addEventListener("click",function(e){
+      listindex = 0;
+      piclist.push(piclist[0]);
+      piclist.shift();
+      pictures.forEach(function(e) {
+        e.style.backgroundImage = piclist[listindex];
+        listindex += 1;
+      })
+      })
+    var rightbutt = document.querySelector(".right");
+    rightbutt.addEventListener("click",function(e){
+      listindex = 0;
+      piclist.unshift(piclist[5]);
+      piclist.pop();
+      pictures.forEach(function(e) {
+        e.style.backgroundImage = piclist[listindex];
+        listindex += 1;
+      })
+      })
+    </script>
+  </body>
+</html>
