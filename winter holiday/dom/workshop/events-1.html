@@ -21,11 +21,13 @@
   </div>
 
   <script>
-    var buttonloc = document.querySelector('div')
-    buttonloc.addEventListener("click", function(e){
-      // this.style.backgroundImage = "url(https://media.giphy.com/media/4c4jQPdVv381G/giphy.gif)"
-      document.querySelector('body').toggle('party')
-    } )// Turn the party on and off by clicking the button.
+var partybutton = document.querySelector('button');
+  partybutton.addEventListener('click', function(e){
+    document.querySelector('body').toggle('party');
+  });
+  // ask what is the solution
+    //  this.style.backgroundImage = "url(https://media.giphy.com/media/4c4jQPdVv381G/giphy.gif)"
+    // Turn the party on and off by clicking the button.
   </script>
   <!-- <script src="events-1.js"></script> -->
 </body>
