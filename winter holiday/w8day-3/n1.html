@@ -2,36 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>no</title>
+    <title>bcdq</title>
   </head>
   <body>
     <script>
-      var httpRequest = new XMLHttpRequest();
-      httpRequest.open('GET', 'http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC', true);
-      httpRequest.send();
-      httpRequest.onreadystatechange = readyfunction;
 
+    let cica = new XMLHttpRequest();
+    cica.open('GET', 'http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC', true);
+    cica.send();
+    cica.onreadystatechange = csinal;
 
-      function readyfunction(rsp){
-        console.log(httpRequest.readyState);
+    function csinal(){
+      if (cica.readyState === XMLHttpRequest.DONE){
+        var resli = JSON.parse(cica.response).data;
 
-        if (httpRequest.readyState === XMLHttpRequest.DONE){
-          console.log(JSON.parse(httpRequest.response));
-
-          var link = JSON.parse(httpRequest.response).data;
-
-        for(var i = 0; i < 5; i++){
-          ( function (sheep){
-          var pic = document.createElement('img');
-          pic.setAttribute('src', link[sheep].images.original_still.url);
-          document.querySelector('body').appendChild(pic);
-
-          pic.addEventListener('click', function(e){
-            e.target.setAttribute('src',link[sheep].images.original.url);
+        for(var w = 0; w < 5; w++ ){
+        (function (ppp){
+          var pi = document.createElement('img');
+          pi.setAttribute('src',resli[ppp].images.original_still.url);
+          document.querySelector('body').appendChild(pi);
+          pi.addEventListener('click', function(kk){
+            kk.target.setAttribute('src',resli[ppp].images.original.url);
           })
-      })(i)
+        })(w)
+        }
+      }
     }
-  }}
     </script>
   </body>
 </html>
