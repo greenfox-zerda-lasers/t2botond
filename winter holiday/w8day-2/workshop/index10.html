@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>title999</title>
+    <style media="screen">
+      #myCircle {
+        position:absolute;
+        width: 25px;
+        height: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <canvas id="myCanvas" width="300" height="00"> -->
+    <div id ="myCircle"></div>
+  <!-- </canvas> -->
+  </body>
+  <script>
+
+  var circle = document.querySelector('div')
+  var currentposition = 0
+  circle.style.backgroundColor = "blue"
+  circle.style.borderRadius = "25px"
+
+
+  function moveThing(){
+    currentposition += 1
+      circle.style.left = currentposition + "px"
+      if (Math.abs(currentposition) >= 900){
+        currentposition =- 5
+      }
+    window.requestAnimationFrame(moveThing);
+  }
+
+moveThing()
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div{
+        position: absolute;
+        background-color: grey;
+        border-radius: 5px;
+        height: 50px;
+        width: 70px;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title>no</title>
+  </head>
+  <body>
+    <div></div>
+  </body>
+  <script>
+    var shape = document.querySelector('div');
+    var posi = 0;
+
+    function mov(){
+      shape.style.left = posi + 'px';
+      posi += 1;
+      window.requestAnimationFrame(mov);
+      if(posi > 400){
+        posi = -100;
+      }
+    }
+    mov();
+  </script>
+</html>

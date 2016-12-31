@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie</title>
+  </head>
+  <body>
+    <script>
+    var requ = new XMLHttpRequest();
+    requ.open('POST','https://sheetsu.com/apis/v1.0/2db71c128d5a');
+    // requ.send()
+    // requ.onreadystatechange = ready;
+
+    var form = {
+      MovieTitle: "Huzd meg a kisujjam",
+      Rating: "666",
+      Username: "Bjbfeiu"
+    }
+
+    // function ready (rsp) {
+      // if(requ.readyState === XMLHttpRequest.DONE){
+        // console.log(JSON.parse(requ.response))
+      // }
+    // }
+    function sender(){
+      requ.setRequestHeader("Content-Type", "application/json");
+      requ.send(JSON.stringify(form));
+    }
+    sender()
+    </script>
+  </body>
+</html>
+ <!--  JSON.stringify-->

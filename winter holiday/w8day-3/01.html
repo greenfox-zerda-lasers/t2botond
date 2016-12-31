@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>something</title>
+  </head>
+  <body>
+    <h1>copy of the Tibi version</h1>
+
+    <script>
+      var httpReq = new XMLHttpRequest();
+      httpReq.open('GET', 'http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC'); // Also try http://444.hu/feed
+      httpReq.send();
+      httpReq.onreadystatechange = ready;
+
+      function ready(rsp){
+        console.log(httpReq.readyState)
+
+      if (httpReq.readyState === XMLHttpRequest.DONE) {
+        console.log(JSON.parse(httpReq.response))
+
+        var linkdata =  JSON.parse(httpReq.response).data
+        for (var i = 0; i < 16; i++){
+      ( function (i2){
+            var image = document.createElement('img')
+            image.setAttribute('src', linkdata[i2].images.original_still.url)
+            // image.setAttribute('src', JSON.parse(httpReq.response).data[i].images.original_still.url)
+            image.addEventListener('click', function(e){
+              e.target.setAttribute('src',linkdata[i2].images.original.url)
+            })
+          document.body.appendChild(image)
+        })(i)
+      }}
+
+}
+    </script>
+  </body>
+</html>
