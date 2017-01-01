@@ -2,32 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>bcdq</title>
+    <title></title>
   </head>
   <body>
     <script>
+      var lasttry = new XMLHttpRequest();
+      lasttry.open('GET', 'http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC', true);
+      lasttry.send()
+      lasttry.onreadystatechange = redd;
 
-    let cica = new XMLHttpRequest();
-    cica.open('GET', 'http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC', true);
-    cica.send();
-    cica.onreadystatechange = csinal;
 
-    function csinal(){
-      if (cica.readyState === XMLHttpRequest.DONE){
-        var resli = JSON.parse(cica.response).data;
+      function redd() {
+        console.log(lasttry.readyState);
+        if (lasttry.readyState == XMLHttpRequest.DONE){
+          var imalist = JSON.parse(lasttry.response).data;
+          console.log(imalist);
 
-        for(var w = 0; w < 5; w++ ){
-        (function (ppp){
-          var pi = document.createElement('img');
-          pi.setAttribute('src',resli[ppp].images.original_still.url);
-          document.querySelector('body').appendChild(pi);
-          pi.addEventListener('click', function(kk){
-            kk.target.setAttribute('src',resli[ppp].images.original.url);
-          })
-        })(w)
+          for(var i = 0; i < 3; i++){
+          (function (p){
+            var ima = document.createElement('img');
+            ima.setAttribute('src',imalist[p].images.original_still.url);
+            document.querySelector('body').appendChild(ima);
+            ima.addEventListener('click', function(klj){
+              ima.setAttribute('src',imalist[p].images.original.url);
+            })
+
+          })(i);
+          }
         }
       }
-    }
+        redd();
     </script>
+
   </body>
 </html>
