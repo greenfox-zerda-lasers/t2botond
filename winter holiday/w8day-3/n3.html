@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>nvfei</title>
+    <script>
+    var req = new XMLHttpRequest();
+    req.open('GET','https://sheetsu.com/apis/v1.0/7654fbe24554');
+    req.send();
+    req.onreadystatechange = ready;
+
+    function ready(){
+        if(req.readyState === XMLHttpRequest.DONE){
+          console.log(req.response);
+        }
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
