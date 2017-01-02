@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ddd</title>
+  </head>
+  <body>
+    <script>
+
+      var lek = new XMLHttpRequest();
+      lek.open('GET','https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=ecf5a7de7cc04cb2b96621ac0933ae26&q=apollo+11+moon');
+      lek.send();
+      lek.onreadystatechange = kesz;
+
+      function kesz(){
+        if(lek.readyState === XMLHttpRequest.DONE){
+          var tallist = JSON.parse(lek.response).response.docs;
+          // console.log(tallist);
+          tallist.forEach(function(listitem){
+            var head = listitem.headline.main;
+            h = document.createElement('h2');
+            h.innerText = head;
+            document.body.appendChild(h);
+
+            var snippet = listitem.snippet;
+            s = document.createElement('p');
+            s.innerText = snippet;
+            document.body.appendChild(s);
+
+            var date = listitem.pub_date;
+            d = document.createElement('div');
+            d.innerText = date;
+            document.body.appendChild(d);
+          })
+        }
+      }
+
+      </script>
+  </body>
+</html>

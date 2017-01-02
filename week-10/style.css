@@ -69,3 +69,10 @@ span{
 }
 li:nth-child(odd) {
     background-color: #FFFFFF;
+}
+li:hover{
+  background-color: lime;
+}
+tr:hover{
+  background-color: pink;
+}
