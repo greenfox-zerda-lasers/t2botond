@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>vfe</title>
+  </head>
+  <body>
+    <main>
+      <section id='left'>
+        <div id='logocontainer'>
+          <img src="D:\greenfox\Greenfox\t2botond\week-10\project-music-player\img\foxplayer.png">
+          <img id='albumpic' src="D:\greenfox\Greenfox\t2botond\week-10\project-music-player\img\music-placeholder.png">
+        </div>
+        <table style="width:100%">
+          <tr>
+            <th>Playlist</th>
+            <th>+</th>
+          </tr>
+          <tr>
+            <td>All tracks</td>
+          </tr>
+          <tr>
+            <td>Favorites</td>
+          </tr>
+        </table>
+      </section>
+      <section id='right'>
+          <div id='played'>
+            <div id='songandalbum'>
+              <div id='artistsong'>
+                <p id='artist' class='texts'>Jethro Tull</p>
+                <p id='song' class='texts'>Locomotive breath</p>
+              </div>
+            <p id='album' class='texts'>Best of</p>
+            </div>
+            <div id="addandrate">
+              <img src='D:\greenfox\Greenfox\t2botond\week-10\project-music-player\img\star.svg'>
+              <p>+</p>
+            </div>
+          </div>
+          <ol id='playedsongs'>
+              <li data-src='D:\greenfox\Greenfox\t2botond\week-10\project-music-player\music\Ars_Sonor_-_02_-_Never_Give_Up.mp3'>ArsSonor-02-Never Give Up<span>x:xx</span></li>
+              <li data-src='D:\greenfox\Greenfox\t2botond\week-10\project-music-player\music\Doctor_Turtle_-_Doctor_Talos_Answers_The_Door.mp3'>Doctor Talos Answers The Door<span>x:xx</span></li>
+              <li data-src='D:\greenfox\Greenfox\t2botond\week-10\project-music-player\music\Organoid_-_09_-_Purple_Drift.mp3'>Organoid-09-Purple Drift<span>x:xx</span></li>
+          </ol>
+      </section>
+    </main>
+    <footer>
+      <audio src='D:/greenfox/Greenfox/t2botond/week-10/project-music-player/music/Ars_Sonor_-_02_-_Never_Give_Up.mp3' controls=""></audio>
+    </footer>
+    <script src="musicplayer.js"></script>
+  </body>
+</html>
