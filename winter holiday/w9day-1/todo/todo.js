@@ -1,7 +1,7 @@
 function getToDos() {
     var request = new XMLHttpRequest();
 
-    request.open('GET', 'https://mysterious-dusk-8248.herokuapp.com/todos');
+    request.open('GET', 'http://localhost:5000/todos');
     request.send();
     request.onreadystatechange = ready;
 
@@ -71,8 +71,8 @@ function getToDos() {
 function changetaskstate(e) {
     console.log(e)
     var request = new XMLHttpRequest();
-    request.open('PUT', 'https://mysterious-dusk-8248.herokuapp.com/todos/' + e.id);
-    request.setRequestHeader("Content-Type", "application/json")// mime type
+    request.open('PUT', 'http://localhost:5000/todos/' + e.id);
+    request.setRequestHeader("Content-Type", "application/json")
     request.send(JSON.stringify({
         text: e.text,
         completed: e.completed
@@ -82,7 +82,7 @@ function changetaskstate(e) {
 function deletetask(e) {
     console.log("Wanna delete")
     var request = new XMLHttpRequest();
-    request.open('DELETE', 'https://mysterious-dusk-8248.herokuapp.com/todos/' + e);
+    request.open('DELETE', 'http://localhost:5000/todos/' + e);
     request.send();
 }
 
@@ -90,7 +90,7 @@ function postDatas() {
     var inputtext = document.querySelector('input').value
         // console.dir(value);
     var request = new XMLHttpRequest();
-    request.open('POST', 'https://mysterious-dusk-8248.herokuapp.com/todos/');
+    request.open('POST', 'http://localhost:5000/todos');
     request.setRequestHeader("Content-Type", "application/json")
     request.send(JSON.stringify({
         text: inputtext

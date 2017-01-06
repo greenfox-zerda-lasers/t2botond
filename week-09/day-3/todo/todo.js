@@ -1,7 +1,7 @@
 function getToDos() {
     var request = new XMLHttpRequest();
 
-    request.open('GET', 'http://localhost:5000/todos');
+    request.open('GET', 'http://localhost:5000/todos');//ezt atirni sajat ip-re. ami parancssorban ipcondigra jon elo csak belso ip kishaloyati cucc.
     request.send();
     request.onreadystatechange = ready;
 
@@ -80,7 +80,7 @@ function changetaskstate(e) {
 }
 
 function deletetask(e) {
-    console.log("Wanna delete")
+    console.log("Wanna fucking delete")
     var request = new XMLHttpRequest();
     request.open('DELETE', 'http://localhost:5000/todos/' + e);
     request.send();

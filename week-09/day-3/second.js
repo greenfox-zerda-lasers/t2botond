@@ -3,26 +3,30 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var app = express();
-app.use(bodyParser.json());
-app.use(express.static('./todo'));
+var app = express(); //http syervert l;trehozo modul.
+app.use(bodyParser.json());//middleware httpk;r;s test r;sy;t parseolja form'yya
+app.use(express.static('./todo'));  //ossyes statikus kerest e todo mappabol szolgalja ki pl fajlok kerese
+//cors modul engedelzezi hogy masik domainrol is mehessenek a keresek
+
+//app.use(cors()) cors oldalan ellenorizni
+
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, DELETE, PUT, POST")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
-});
+});   //cors miatt nem kell
 
 var mysql = require('mysql');
-var con = mysql.createConnection({
+var con = mysql.createConnection({  //csatlakozas mmysql serverhez alapbol elindul...
   host:'localhost',
   user:'root',
   password:'6025',
   database:'todo'
 });
 
-con.connect(function(err){
+con.connect(function(err){  ///callback fuggveny ami parameterkent van adva es kesobb van meghivva. ey csak hibakezeles miatt van
   if(err){
     console.log('Error connecting to todos');
     return;
@@ -37,7 +41,7 @@ con.connect(function(err){
 app.get('/todos', function a(req, res) {
   // res.set('Content-Type', 'application/json');
   // console.log(list);
-  if(req.query.completed){
+  if(req.query.completed){  //req query az url bol kerdojel modotti resz /todos?completed= hd fhvfejvbfjvbef
     con.query('SELECT * FROM todos where completed='+ req.query.completed, function(err, rows){
       if(err){
         console.log('Error connecting to todos');
@@ -60,8 +64,8 @@ app.get('/todos', function a(req, res) {
   // res.send('hello')
 });
 app.get('/todos/:id', function b(req, res){
-  con.query('SELECT * from todos WHERE id ='+ req.params.id, function c(err, rows){
-    if(err){
+  con.query('SELECT * from todos WHERE id ='+ req.params.id, function c(err, rows){ ///req.body htp keres belso tartalma, most json volt
+    if(err){                                                                        ///req.params a kettospont utani parameter
       console.log('Error connecting to todos');
       return;
     }
@@ -82,7 +86,8 @@ app.get('/todos/:id', function b(req, res){
 app.post('/todos',
 
 function d(req, res){
-  con.query('INSERT INTO todos(text, completed) VALUES(\''+ req.body.text+'\',0)',function c(err, rows){
+  // con.query('INSERT INTO todos(text, completed) VALUES(\''+ req.body.text+'\',0)',function c(err, rows){
+  con.query('INSERT INTO todos(text, completed) VALUES(?,0)', [req.body.text], function c(err, rows){
     if(err){
       console.log('Error connecting to todos');
       return;
