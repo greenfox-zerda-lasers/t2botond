@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>blabla</title>
   </head>
   <body>
 
@@ -11,9 +11,24 @@
   <script type="text/javascript">
 
   let httpRequest = new XMLHttpRequest();
-  httpRequest.open('GET', 'https://sheetsu.com/apis/v1.0/7654fbe24554', true); // Also try http://444.hu/feed
-  httpRequest.send(null);
-  httpRequest.onreadystatechange = console.log;
+  // http://apiv2.oroszi.net/elvira/details?url=http%3A%2F%2Felvira.mav-start.hu%2Felvira.dll%2Fx%2Fvt%3Fv%3D3207%26d%3D17.01.14%26language%3D1%26ed%3D58750ADA
+  httpRequest.open('GET', "http://apiv2.oroszi.net/elvira/leaderboard?station=keleti" ,true); // Also try http://444.hu/feed
+  httpRequest.setRequestHeader('Content-Type','application/json');
+  httpRequest.send()
+  // JSON.stringify(
+  //   {
+  //   from: "budapest",
+  //   to: "miskolc",
+  //   date: "2017.01.17"
+  // }));
+  httpRequest.onreadystatechange = ready;
+
+  function ready(){
+    if(httpRequest.readyState = XMLHttpRequest.DONE){
+      var result = httpRequest.response;
+      console.log(JSON.parse(result));
+    }
+  }
 
   </script>
 </html>
